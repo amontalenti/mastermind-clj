@@ -21,23 +21,27 @@
 
 (def board (initial-board))
 
-(lookup (initial-board) "a1")
-;; => \Q
-
 (defn print-board [board]
   (dorun (map println (partition 8 board))))
 
 (def board (initial-board))
 
+(println)
 (println "Initial chessboard state:")
 (println "-------------------------")
 (print-board board)
+
+(println)
+(println "Lookup cell at a1:")
+(println "------------------")
+(println (lookup board "a1"))
 
 (defn find-queens [board]
  (doseq [cell (map-indexed vector board)]
    (if (= (nth cell 1) \Q)
      (prn cell))))
 
+(println)
 (println "Location of the queens:")
 (println "-----------------------")
 (find-queens board)

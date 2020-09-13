@@ -25,8 +25,7 @@
 ;; => \Q
 
 (defn print-board [board]
-  (doseq [part (partition 8 board)]
-    (println part)))
+  (dorun (map println (partition 8 board))))
 
 (println "Initial chessboard state:")
 (println "-------------------------")

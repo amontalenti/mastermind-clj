@@ -19,6 +19,8 @@
         index (+ f r)]
     (board index)))
 
+(def board (initial-board))
+
 (lookup (initial-board) "a1")
 ;; => \Q
 

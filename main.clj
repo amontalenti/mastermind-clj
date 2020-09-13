@@ -19,5 +19,15 @@
         index (+ f r)]
     (board index)))
 
+(def board (initial-board))
+
 (lookup (initial-board) "a1")
 ;; => \Q
+
+(defn print-board [board]
+  (doseq [part (partition 8 board)]
+    (println part)))
+
+(println "Initial chessboard state:")
+(println "-------------------------")
+(print-board board)

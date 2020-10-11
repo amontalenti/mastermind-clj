@@ -1,4 +1,4 @@
-(ns recurse)
+(ns mastermind.core)
 
 (defn initial-board []
  ; eight queens on a board
@@ -26,22 +26,23 @@
 
 (def board (initial-board))
 
-(println)
-(println "Initial chessboard state:")
-(println "-------------------------")
-(print-board board)
+(defn mastermind []
+  (println)
+  (println "Initial chessboard state:")
+  (println "-------------------------")
+  (print-board board)
 
-(println)
-(println "Lookup cell at a1:")
-(println "------------------")
-(println (lookup board "a1"))
+  (println)
+  (println "Lookup cell at a1:")
+  (println "------------------")
+  (println (lookup board "a1"))
 
-(defn find-queens [board]
- (doseq [cell (map-indexed vector board)]
-   (if (= (nth cell 1) \Q)
-     (prn cell))))
+  (defn find-queens [board]
+  (doseq [cell (map-indexed vector board)]
+    (if (= (nth cell 1) \Q)
+      (prn cell))))
 
-(println)
-(println "Location of the queens:")
-(println "-----------------------")
-(find-queens board)
+  (println)
+  (println "Location of the queens:")
+  (println "-----------------------")
+  (find-queens board))

@@ -10,11 +10,24 @@
 ;; a code is of the form [:r :g :y :b]
 ;; a game is of the form {:secret-code [:g :g :b :p], :guesses [{:guess [:r :r :r :r] :score {:strong 0 :weak 0}} ...]]}
 
-(defn random-code []
-  (println "random-code")
-  [:g :g :b :p])
+(defn rand-choose
+  "Selects num-items from coll randomly, returns a vector of size num-items."
+  [num-items coll]
+  (repeatedly num-items (partial rand-nth coll)))
+
+(defn random-code
+  "Returns a vector of 4 colors selected at random from available colors."
+  []
+  (vec (rand-choose 4 (vec colors))))
 
 (defn strong-match-count [xs ys]
+  (comment
+    "We want an algorithm with the following steps:"
+    xs = [:b :b :o :o]
+    xy = [:b :b :b :b]
+    make-pairs = [[:b :b] [:b :b] [:o :b] [:o :b]]
+    compare-matches = [1 1 0 0]
+    get-matches = 2)
   (println [xs ys])
   0)
 
@@ -71,7 +84,8 @@
   ;; start new game by evaluating this `do` block
   (do
     (def g (new-game))
-    (print-game g))
+    (print-game g)
+    g)
 
   ;; make a guess by editing the vector and evaluating the `do` block
   (do

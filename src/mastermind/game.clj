@@ -1,4 +1,4 @@
-(ns mastermind.estevo)
+(ns mastermind.game)
 
 ;;; core logic
 

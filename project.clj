@@ -6,4 +6,4 @@
   :dependencies [[org.clojure/clojure "1.10.1"]
                  [org.clojure/data.codec "0.1.1"]
                  ]
-  :main mastermind.estevo)
+  :main mastermind.game)

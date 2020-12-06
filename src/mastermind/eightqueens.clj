@@ -1,4 +1,4 @@
-(ns mastermind.core)
+(ns mastermind.eightqueens)
 
 (defn initial-board []
  ; eight queens on a board
@@ -26,7 +26,7 @@
 
 (def board (initial-board))
 
-(defn mastermind []
+(defn play-eight-queens []
   (println)
   (println "Initial chessboard state:")
   (println "-------------------------")

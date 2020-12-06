@@ -18,7 +18,7 @@ Clojure" (Manning Press) and "The Elements of Clojure" in writing our code.
 Ironically, though we are implementing Mastermind, the board game, these
 pairing sessions also serve as ["mastermind group"][group] for a few
 professional programmers expanding their functional programming horizons beyond
-the usual find in languages like Python and JavaScript.
+the usual concepts found in languages like Python and JavaScript.
 
 [recurse]: https://recurse.com
 [mastermind]: https://en.wikipedia.org/wiki/Mastermind_(board_game)

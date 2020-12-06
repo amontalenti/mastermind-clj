@@ -20,20 +20,24 @@
   []
   (vec (rand-choose 4 (vec colors))))
 
+(defn match-mask [xs ys]
+  (map = xs ys))
+
 (defn strong-match-count [xs ys]
-  (comment
-    "We want an algorithm with the following steps:"
-    xs = [:b :b :o :o]
-    xy = [:b :b :b :b]
-    make-pairs = [[:b :b] [:b :b] [:o :b] [:o :b]]
-    compare-matches = [1 1 0 0]
-    get-matches = 2)
-  (println [xs ys])
-  0)
+  (count (filter true? (match-mask xs ys))))
+
+(defn filterer [mask xs]
+  (keep #(when-not (first %) (second %)) (map vector mask xs)))
+
+(defn key-min [key m1 m2]
+  (min (get m1 key 0)
+       (get m2 key 0)))
 
 (defn weak-match-count [xs ys]
-  (println [xs ys])
-  0)
+  (let [mask (match-mask xs ys)
+        fxs (frequencies (filterer mask xs))
+        fxy (frequencies (filterer mask ys))]
+    (apply + (map #(key-min % fxs fxy) colors))))
 
 ;; xs is the secret code and ys is a guess.. or vice versa, since order doesn't matter
 (defn score [xs ys]

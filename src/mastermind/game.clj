@@ -36,8 +36,8 @@
 (defn weak-match-count [xs ys]
   (let [mask (match-mask xs ys)
         fxs (frequencies (filterer mask xs))
-        fxy (frequencies (filterer mask ys))]
-    (apply + (map #(key-min % fxs fxy) colors))))
+        fys (frequencies (filterer mask ys))]
+    (apply + (map #(key-min % fxs fys) colors))))
 
 ;; xs is the secret code and ys is a guess.. or vice versa, since order doesn't matter
 (defn score [xs ys]

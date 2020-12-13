@@ -33,6 +33,10 @@ The **bottom-right pane** is nothing more than `tail -f .lein-repl-history`. Thi
 helps to just see the expressions (especially multi-line expressions) in plain
 text, so they can be copy-pasted back into vim using tmux clipboard control.
 
+If instead of running regular tmux, you run [tmate][tmate] instead, you now
+get the same environment but available for multi-user pair programming at
+high speed on pretty much any internet connection. Nice!
+
 Since this is part of a book club, we're using concepts from ["The Joy of
 Clojure"][joy] (Manning Press) and "The Elements of Clojure" in writing our code.
 
@@ -42,6 +46,7 @@ professional programmers expanding their functional programming horizons beyond
 the usual concepts found in languages like Python and JavaScript.
 
 [cheat-sheet]: https://gist.github.com/nblumoe/5450099
+[tmate]: https://tmate.io/
 [joy]: https://amzn.to/2LyNZmL
 [recurse]: https://recurse.com
 [mastermind]: https://en.wikipedia.org/wiki/Mastermind_(board_game)
